@@ -1,13 +1,16 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.order(id: "DESC")
   end
 
-  def new
-  end
+  #コメントアウトする
+  # def new
+  # end
 
   def create
-    Post.create(content: params[:content])
+    Post.create(contnt: params[:content])
+    redirect_to action: :index
   end
+
 end
