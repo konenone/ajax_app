@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(contnt: params[:content])
+    Post.create(content: params[:content])
     redirect_to action: :index
   end
 
